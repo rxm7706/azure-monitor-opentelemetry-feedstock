@@ -3,7 +3,7 @@ schema_version: 1
 
 context:
   name: azure-monitor-opentelemetry
-  version: "1.6.10"
+  version: "1.6.11"
 
 package:
   name: ${{ name|lower }}
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/azure_monitor_opentelemetry-${{ version }}.tar.gz
-  sha256: 1f8145f665abb1626ac1caf14f75fc9b4fc43b818694798f7a43ea369e265683
+  sha256: 37908b06509be61fd045357f455b3c906d8b97ebfa7e8e34890fe9d554fa8e71
 
 build:
   number: 0
@@ -50,7 +50,7 @@ about:
   summary: Microsoft Azure Monitor Opentelemetry Distro Client Library for Python
   homepage: https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/monitor/azure-monitor-opentelemetry
   description: |
-       Microsoft Azure Monitor Opentelemetry Distro Client Library for Python.
+    Microsoft Azure Monitor Opentelemetry Distro Client Library for Python.
   repository: https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/monitor/azure-monitor-opentelemetry
   documentation: https://github.com/Azure/azure-sdk-for-python/blob/main/sdk/monitor/azure-monitor-opentelemetry/README.md
   license: Apache-2.0 AND MIT
