@@ -25,32 +25,41 @@ requirements:
   run:
     - python >=${{ python_min }}
     - azure-core <2.0.0,>=1.28.0
-    - azure-core-tracing-opentelemetry ~=1.0.0b11
-    - azure-monitor-opentelemetry-exporter ~=1.0.0b54
-    - opentelemetry-sdk ~=1.43.0
-    - opentelemetry-instrumentation-django <0.65.0,>=0.64b0
-    - opentelemetry-instrumentation-fastapi <0.65.0,>=0.64b0
-    - opentelemetry-instrumentation-flask <0.65.0,>=0.64b0
-    - opentelemetry-instrumentation-psycopg2 <0.65.0,>=0.64b0
-    - opentelemetry-instrumentation-requests <0.65.0,>=0.64b0
-    - opentelemetry-instrumentation-urllib <0.65.0,>=0.64b0
+    - azure-core-tracing-opentelemetry >=1.0.0b11,<1.1.dev0
+    - azure-monitor-opentelemetry-exporter >=1.0.0b52,<1.1.dev0
+    - opentelemetry-instrumentation-django ==0.64b0
+    - opentelemetry-instrumentation-fastapi ==0.64b0
+    - opentelemetry-instrumentation-flask ==0.64b0
+    - opentelemetry-instrumentation-logging ==0.64b0
+    - opentelemetry-instrumentation-psycopg2 ==0.64b0
+    - opentelemetry-instrumentation-requests ==0.64b0
+    - opentelemetry-instrumentation-urllib ==0.64b0
+    - opentelemetry-instrumentation-urllib3 ==0.64b0
+    - opentelemetry-resource-detector-azure >=0.1.5,<0.2.dev0
+    - opentelemetry-sdk ==1.40.0
 
 tests:
   - python:
       imports:
         - azure
+        - azure.monitor.opentelemetry
+        - azure.monitor.opentelemetry._autoinstrumentation
       pip_check: true
       python_version:
         - ${{ python_min }}.*
         - "*"
 
 about:
-  homepage: https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/monitor/azure-monitor-opentelemetry
-  license: MIT
-  license_file: LICENSE
   summary: Microsoft Azure Monitor Opentelemetry Distro Client Library for Python
+  homepage: https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/monitor/azure-monitor-opentelemetry
   description: |
-    Microsoft Azure Monitor Opentelemetry Distro Client Library for Python
+    Microsoft Azure Monitor Opentelemetry Distro Client Library for Python.
+  repository: https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/monitor/azure-monitor-opentelemetry
+  documentation: https://github.com/Azure/azure-sdk-for-python/blob/main/sdk/monitor/azure-monitor-opentelemetry/README.md
+  license: Apache-2.0 AND MIT
+  license_file:
+    - LICENSE
+    - NOTICE.txt
 
 extra:
   recipe-maintainers:
