@@ -36,7 +36,7 @@ requirements:
     - opentelemetry-instrumentation-urllib ==0.64b0
     - opentelemetry-instrumentation-urllib3 ==0.64b0
     - opentelemetry-resource-detector-azure >=0.1.5,<0.2.dev0
-    - opentelemetry-sdk ==1.40.0
+    - opentelemetry-sdk ==1.43.0
 
 tests:
   - python:
