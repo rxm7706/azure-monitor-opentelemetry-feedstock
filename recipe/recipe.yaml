@@ -2,16 +2,15 @@
 schema_version: 1
 
 context:
-  name: azure-monitor-opentelemetry
-  version: "1.8.8"
+  version: "1.8.9"
 
 package:
-  name: ${{ name|lower }}
+  name: azure-monitor-opentelemetry
   version: ${{ version }}
 
 source:
-  url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/azure_monitor_opentelemetry-${{ version }}.tar.gz
-  sha256: c6478cac82939230e9af1004b0a147e39b9046a564f3811d65241797f2f9d41d
+  url: https://pypi.org/packages/source/a/azure-monitor-opentelemetry/azure_monitor_opentelemetry-${{ version }}.tar.gz
+  sha256: 9cda4481c52e02cb3e8e11a34d2491fb07000ed32ee655d75de0747e7d24fea7
 
 build:
   number: 0
@@ -26,38 +25,32 @@ requirements:
   run:
     - python >=${{ python_min }}
     - azure-core <2.0.0,>=1.28.0
-    - azure-core-tracing-opentelemetry >=1.0.0b11,<1.1.dev0
-    - azure-monitor-opentelemetry-exporter >=1.0.0b52,<1.1.dev0
-    - opentelemetry-instrumentation-django ==0.61b0
-    - opentelemetry-instrumentation-fastapi ==0.61b0
-    - opentelemetry-instrumentation-flask ==0.61b0
-    - opentelemetry-instrumentation-logging ==0.61b0
-    - opentelemetry-instrumentation-psycopg2 ==0.61b0
-    - opentelemetry-instrumentation-requests ==0.61b0
-    - opentelemetry-instrumentation-urllib ==0.61b0
-    - opentelemetry-instrumentation-urllib3 ==0.61b0
-    - opentelemetry-resource-detector-azure >=0.1.5,<0.2.dev0
-    - opentelemetry-sdk ==1.40.0
+    - azure-core-tracing-opentelemetry ~=1.0.0b11
+    - azure-monitor-opentelemetry-exporter ~=1.0.0b54
+    - opentelemetry-sdk ~=1.43.0
+    - opentelemetry-instrumentation-django <0.65.0,>=0.64b0
+    - opentelemetry-instrumentation-fastapi <0.65.0,>=0.64b0
+    - opentelemetry-instrumentation-flask <0.65.0,>=0.64b0
+    - opentelemetry-instrumentation-psycopg2 <0.65.0,>=0.64b0
+    - opentelemetry-instrumentation-requests <0.65.0,>=0.64b0
+    - opentelemetry-instrumentation-urllib <0.65.0,>=0.64b0
 
 tests:
   - python:
       imports:
-        - azure.monitor.opentelemetry
-        - azure.monitor.opentelemetry._autoinstrumentation
+        - azure
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
 
 about:
-  summary: Microsoft Azure Monitor Opentelemetry Distro Client Library for Python
   homepage: https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/monitor/azure-monitor-opentelemetry
+  license: MIT
+  license_file: LICENSE
+  summary: Microsoft Azure Monitor Opentelemetry Distro Client Library for Python
   description: |
-    Microsoft Azure Monitor Opentelemetry Distro Client Library for Python.
-  repository: https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/monitor/azure-monitor-opentelemetry
-  documentation: https://github.com/Azure/azure-sdk-for-python/blob/main/sdk/monitor/azure-monitor-opentelemetry/README.md
-  license: Apache-2.0 AND MIT
-  license_file:
-    - LICENSE
-    - NOTICE.txt
+    Microsoft Azure Monitor Opentelemetry Distro Client Library for Python
 
 extra:
   recipe-maintainers:

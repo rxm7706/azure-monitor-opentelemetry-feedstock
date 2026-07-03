@@ -5,15 +5,11 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/azure-monitor-o
 
 Home: https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/monitor/azure-monitor-opentelemetry
 
-Package license: Apache-2.0 AND MIT
+Package license: MIT
 
 Summary: Microsoft Azure Monitor Opentelemetry Distro Client Library for Python
 
-Development: https://github.com/Azure/azure-sdk-for-python/tree/main/sdk/monitor/azure-monitor-opentelemetry
-
-Documentation: https://github.com/Azure/azure-sdk-for-python/blob/main/sdk/monitor/azure-monitor-opentelemetry/README.md
-
-Microsoft Azure Monitor Opentelemetry Distro Client Library for Python.
+Microsoft Azure Monitor Opentelemetry Distro Client Library for Python
 
 Current build status
 ====================
